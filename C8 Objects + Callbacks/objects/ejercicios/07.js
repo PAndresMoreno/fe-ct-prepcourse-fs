@@ -7,6 +7,14 @@ function sort(sortBy, list) {
    // recibes --> ("a", [{ a: 1, b: 3 }, { a: 3, b: 2 }, { a: 2, b: 40 }])
    // retorna --> [{ a: 3, b: 2 }, { a: 2, b: 40 }, { a: 1, b: 3 }]
    // Tu código:
+
+   for (let i = 0; i < list.length -1; i++) {
+      if (list[i][sortBy] < list[i+1][sortBy]) {
+         let elemento = list.splice(i,1);
+         list.push(elemento[0]);
+         i = -1;
+      }
+   } return list;
 }
 
 module.exports = sort;
