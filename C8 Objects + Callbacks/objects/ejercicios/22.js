@@ -8,7 +8,7 @@ function esAnagrama(str1, str2) {
    let word1 = str1.toLowerCase().split("").sort().join("");
    let word2 = str2.toLowerCase().split("").sort().join("");
 
-   return word1 === word2 ? true : false;
+   return word1 === word2;
 }
 
 module.exports = esAnagrama;
