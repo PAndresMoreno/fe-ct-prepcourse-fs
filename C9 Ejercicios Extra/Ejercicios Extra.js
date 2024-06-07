@@ -11,7 +11,6 @@ function deObjetoAarray(objeto) {
     let subArreglo = [];
     subArreglo.push(propiedad, objeto[propiedad]);
     arregloFinal.push(subArreglo);
-    subArreglo = [];
   } return arregloFinal;
 }
 
