@@ -6,6 +6,13 @@ function deObjetoAarray(objeto) {
   // Estos elementos debe ser cada par clave:valor del objeto recibido.
   // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
   // Tu código:
+  let arregloFinal = [];
+  for (let propiedad in objeto) {
+    let subArreglo = [];
+    subArreglo.push(propiedad, objeto[propiedad]);
+    arregloFinal.push(subArreglo);
+    subArreglo = [];
+  } return arregloFinal;
 }
 
 function numberOfCharacters(string) {
@@ -14,6 +21,16 @@ function numberOfCharacters(string) {
   // Las letras deben estar en orden alfabético.
   // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
   // Tu código:
+  let stringOrdenado = string.split("").sort();
+  let nuevoObjeto = {};
+  let repeticiones = 1;
+
+  for (let i = 0; i < stringOrdenado.length; i++) {
+    nuevoObjeto[stringOrdenado[i]] = repeticiones;
+    if (stringOrdenado[i] === stringOrdenado[i + 1]) {
+      repeticiones++;
+    } else repeticiones = 1;
+  } return nuevoObjeto;
 }
 
 function capToFront(string) {
