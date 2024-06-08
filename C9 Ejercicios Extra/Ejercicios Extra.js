@@ -38,6 +38,15 @@ function capToFront(string) {
   // Retornar el string.
   // [EJEMPLO]: soyHENRY ---> HENRYsoy
   // Tu código:
+  let splitWord = string.split("");
+  let lowerCaseArray = [];
+  for (let i = 0; i < splitWord.length; i++) {
+    if (splitWord[i] >= "a" && splitWord[i] <= "z") {
+      let lowerCase = splitWord.splice(i, 1);
+      lowerCaseArray.push(lowerCase[0]);
+      i--;
+    }
+  } return splitWord.concat(lowerCaseArray).join("");
 }
 
 function asAmirror(frase) {
