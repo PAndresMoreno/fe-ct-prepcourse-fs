@@ -54,12 +54,18 @@ function asAmirror(frase) {
   // La diferencia es que cada palabra estará escrita al inverso.
   // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
   // Tu código:
+  let palabrasSeparadas = frase.split(" ");
+  let arregloFinal = palabrasSeparadas.map((palabra) => {
+    return palabra.split("").reverse().join("");
+  }); return arregloFinal.join(" ");
 }
 
 function capicua(numero) {
   // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
   // Caso contrario: "No es capicua".
   // Tu código:
+  let reversedNumber = numero.toString().split("").reverse().join("");
+  return numero == reversedNumber ? "Es capicua" : "No es capicua";
 }
 
 function deleteAbc(string) {
