@@ -72,6 +72,14 @@ function deleteAbc(string) {
   // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
   // Retorna el string sin estas letras.
   // Tu código:
+  let abc = ["a", "b", "c"];
+  let splitWord = string.split("");
+  let finalWord = [];
+  for (let i = 0; i < splitWord.length; i++) {
+    if (abc.includes(splitWord[i]) === false) {
+      finalWord.push(splitWord[i])
+    }
+  } return finalWord.join("");
 }
 
 function sortArray(arrayOfStrings) {
@@ -80,6 +88,14 @@ function sortArray(arrayOfStrings) {
   // de la longitud de cada string.
   // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
   // Tu código:
+
+  for (let i = 0; i < arrayOfStrings.length - 1; i++) {
+    if (arrayOfStrings[i].length > arrayOfStrings[i + 1].length) {
+      let longerWord = arrayOfStrings.splice(i, 1);
+      arrayOfStrings.push(longerWord[0]);
+      i = -1;
+    }
+  } return arrayOfStrings;
 }
 
 function buscoInterseccion(array1, array2) {
@@ -89,6 +105,13 @@ function buscoInterseccion(array1, array2) {
   // Si no tienen elementos en común, retornar un arreglo vacío.
   // [PISTA]: los arreglos no necesariamente tienen la misma longitud.
   // Tu código:
+  let finalArray = [];
+  let mergedArrays = array1.concat(array2).sort();
+  for (let i = 0; i < mergedArrays.length - 1; i++) {
+    if (mergedArrays[i] === mergedArrays[i + 1]) {
+      finalArray.push(mergedArrays[i]);
+    }
+  } return finalArray;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
